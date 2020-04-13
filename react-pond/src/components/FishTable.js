@@ -1,11 +1,12 @@
 import FishTableRow from './FishTableRow.js';
 
-var FishTable = () => (
+var FishTable = ({fishes}) => (
   <table>
     <tbody>
+      {fishes.map((fish) => <FishTableRow fish={fish}/>)}
+      {/* <FishTableRow />
       <FishTableRow />
-      <FishTableRow />
-      <FishTableRow />
+      <FishTableRow /> */}
     </tbody>
   </table>
 );
