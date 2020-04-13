@@ -15,7 +15,7 @@ var server = http.createServer(function(request, response) {
     response.end();
   } else if (request.method === 'GET') {
     // YOUR CODE HERE
-    var val = globalCounter[endpoint] || 0;
+    var val = globalCounter[endpoint] || '';
     response.end(val.toString());
   } else {
     response.statusCode = 404;
