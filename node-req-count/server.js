@@ -10,8 +10,13 @@ var server = http.createServer(function(request, response) {
 
   if (request.method === 'POST') {
     // YOUR CODE HERE
+    //response.writeHead(200, {});
+    globalCounter[endpoint] = (globalCounter[endpoint] + 1) || 1;
+    response.end();
   } else if (request.method === 'GET') {
     // YOUR CODE HERE
+    var val = globalCounter[endpoint] || 0;
+    response.end(val.toString());
   } else {
     response.statusCode = 404;
     response.end();
